@@ -6,6 +6,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
 	entry: './src/index.tsx',
 	mode: 'development',
+	devServer: {
+		historyApiFallback: true, // component güncelleme yapınca yada browserdan refresh yapınca sayfa cannot find hatası vermesin diye yazdık. sadece development için bu ayarı kullanıyoruz.
+	},
 	output: {
 		filename: 'index.js',
 		path: path.resolve(__dirname, 'dist'),

@@ -7,7 +7,7 @@ import UseStateDemo from './memoisation/useState/usestate.demo';
 import UseEffectDemo from './memoisation/useEffect/useeffect.demo';
 import UseRefDemo from './memoisation/useRef/useref.demo';
 import UseMemoDemo from './memoisation/useMemo/usememo.demo';
-import ReactMemoDemo from './memoisation/reactMemo/reactmemo.demo';
+import ReactMemoDemo from './memoisation/reactMemo/parent.component.demo';
 import UseCallBackDemo from './memoisation/useCallback/usecallback.demo';
 import UseImperativeHandlerDemo from './memoisation/useImperativeHandler/useimpretivehandler.demo';
 import UseReducerDemo from './memoisation/useReducer/usereducer.demo';
