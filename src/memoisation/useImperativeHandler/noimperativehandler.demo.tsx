@@ -1,18 +1,19 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import ModalDemo, { ModalHandle } from './modal.demo';
+import ModalDemoWithState from './modal.demoWithState';
 
-function UseImperativeHandlerDemo() {
+function UseNoImperativeHandlerDemo() {
 	console.log('...parent rendering');
-	const modalRef = useRef<ModalHandle>(null);
+	const [visible, setVisible] = useState<boolean>(false);
 
 	// UseImeperative Handler => Dış bir componentten child bir componentin iç state'ini değiştirmemize olanak sağlayan side effect oluşturmayan bir yöntem
 
 	return (
 		<>
-			<h1>Imperative Handler Demo</h1>
+			<h1>Non Imperative</h1>
 			<button
 				onClick={() => {
-					modalRef.current?.open();
+					setVisible(true);
 				}}
 			>
 				Open
@@ -20,14 +21,14 @@ function UseImperativeHandlerDemo() {
 			:
 			<button
 				onClick={() => {
-					modalRef.current?.close();
+					setVisible(false);
 				}}
 			>
 				Close
 			</button>
-			<ModalDemo ref={modalRef} />
+			<ModalDemoWithState visible={visible} />
 		</>
 	);
 }
 
-export default UseImperativeHandlerDemo;
+export default UseNoImperativeHandlerDemo;

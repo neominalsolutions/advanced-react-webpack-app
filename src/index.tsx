@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDom from 'react-dom/client';
 import './index.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { App } from './App';
 import UseStateDemo from './memoisation/useState/usestate.demo';
 import UseEffectDemo from './memoisation/useEffect/useeffect.demo';
 import UseRefDemo from './memoisation/useRef/useref.demo';
@@ -11,6 +10,8 @@ import ReactMemoDemo from './memoisation/reactMemo/parent.component.demo';
 import UseCallBackDemo from './memoisation/useCallback/usecallback.demo';
 import UseImperativeHandlerDemo from './memoisation/useImperativeHandler/useimpretivehandler.demo';
 import UseReducerDemo from './memoisation/useReducer/usereducer.demo';
+import { App } from './app';
+import UseNoImperativeHandlerDemo from './memoisation/useImperativeHandler/noimperativehandler.demo';
 
 const router = createBrowserRouter([
 	{
@@ -42,8 +43,12 @@ const router = createBrowserRouter([
 				Component: UseCallBackDemo,
 			},
 			{
-				path: '/useimperativehandler',
+				path: '/useimperative',
 				Component: UseImperativeHandlerDemo,
+			},
+			{
+				path: '/usenonimperative',
+				Component: UseNoImperativeHandlerDemo,
 			},
 			{
 				path: '/usereducer',

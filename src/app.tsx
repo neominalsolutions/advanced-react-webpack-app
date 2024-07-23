@@ -13,7 +13,8 @@ export function App() {
 					<Link to="/usememo">Use Memo Demo</Link>{' '}
 					<Link to="/reactmemo">React Memo Demo</Link>{' '}
 					<Link to="/usecallback">React Callback Demo</Link>{' '}
-					<Link to="/useimperativehandler">Use Imperative Demo</Link>{' '}
+					<Link to="/useimperative">Use Imperative Demo</Link>{' '}
+					<Link to="/usenonimperative">Use Non Imperative Demo</Link>{' '}
 					<Link to="/usereducer">Use Reducer Demo</Link>{' '}
 				</nav>
 			</header>
