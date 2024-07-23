@@ -15,6 +15,7 @@ import UseNoImperativeHandlerDemo from './memoisation/useImperativeHandler/noimp
 import CustomHookDemo from './memoisation/customHook/custom.hook.demo';
 import AxiosDemo from './memoisation/axiosDemo/axios.demo';
 import CustomHookLoadDataDemo from './memoisation/customHook/custom.hook.load.data.demo';
+import DebouncingDemo from './memoisation/debouncing/debouncing.demo';
 
 const router = createBrowserRouter([
 	{
@@ -68,6 +69,10 @@ const router = createBrowserRouter([
 			{
 				path: '/axiosDemo',
 				Component: AxiosDemo,
+			},
+			{
+				path: '/debouncing',
+				Component: DebouncingDemo,
 			},
 		],
 	},

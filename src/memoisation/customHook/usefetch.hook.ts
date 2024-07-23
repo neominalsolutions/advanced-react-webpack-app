@@ -22,6 +22,8 @@ export function UseFetch<TData>(client: AxiosInstance, endpoint: string) {
 	const [state, setState] = useState(initState);
 
 	useEffect(() => {
+		console.log('client veya url değişti');
+
 		// verinin çekilmeye başladığı an
 		setState({ ...state, loading: true });
 
@@ -29,6 +31,11 @@ export function UseFetch<TData>(client: AxiosInstance, endpoint: string) {
 			.get(endpoint)
 			.then((response) => {
 				console.log('load-data', response.data);
+
+				// northwind veri seti için bir ayar yaptık
+				if (response.data.value) {
+					response.data = response.data.value;
+				}
 
 				setState({
 					...state,
