@@ -12,6 +12,7 @@ import UseImperativeHandlerDemo from './memoisation/useImperativeHandler/useimpr
 import UseReducerDemo from './memoisation/useReducer/usereducer.demo';
 import { App } from './app';
 import UseNoImperativeHandlerDemo from './memoisation/useImperativeHandler/noimperativehandler.demo';
+import CustomHookDemo from './memoisation/customHook/custom.hook.demo';
 
 const router = createBrowserRouter([
 	{
@@ -53,6 +54,10 @@ const router = createBrowserRouter([
 			{
 				path: '/usereducer',
 				Component: UseReducerDemo,
+			},
+			{
+				path: '/customHook',
+				Component: CustomHookDemo,
 			},
 		],
 	},
