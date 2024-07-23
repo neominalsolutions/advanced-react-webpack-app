@@ -5,32 +5,23 @@ import {
 	northwndClient,
 } from '../../network/setup.interceptors';
 import { getProducts } from '../../services/product.services';
+import { UseStorage } from './useStorage.hook';
+
+// hooklar function compopnentlerde function component bodysine yazılan özel functionlar.
+// amaç function yüklenirken bir eylemi yerine getirmek,
+// UseLocalStorage => localStorage bilgi okuyup ekrana yazdırabiliriz
+// UseLoadData => belirli bir endpointeki verileri yakalama işlemlerini merkezi yönettiğim bir hook olur.
+// bu hookları bir state bağlıda özelleştirebilir.
+// state değişiminde tekrar tetiklenecek şekilde yazabilirim.
 
 function CustomHookDemo() {
-	// request response interceptor ile loglanarak kullanılıyor.
 
-	// buradan çağırınca interceptor var
-	const jsonPlaceHolderApi = jsonPlaceHolderClient();
+	// token yerine başka bir key gelirse bu durumda bu hook nasıl tekrardan güncellenip değeri üretecek bide buna bakacağız.
 
-	// request-response loglanmıyor
-	// interceptor yok
-	const northwndApi = httpClientModule.northwndApi;
+	// ilk çağırıda herhangi bir componentin içinde yani bodysinde çağırıyoruz.
+	const { value } = UseStorage('token');
 
-	useEffect(() => {
-		jsonPlaceHolderApi.get('/posts').then((response) => {
-			console.log('data', response.data);
-		});
-
-		// northwndApi.get('/Products').then((response) => {
-		// 	console.log('response', response.data);
-		// });
-
-		getProducts().then((response) => {
-			console.log('data', response.data);
-		});
-	}, []);
-
-	return <>Custom Hook</>;
+	return <>Token Value: {value}</>;
 }
 
 export default CustomHookDemo;

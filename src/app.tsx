@@ -17,6 +17,7 @@ export function App() {
 					<Link to="/usenonimperative">Use Non Imperative Demo</Link>{' '}
 					<Link to="/usereducer">Use Reducer Demo</Link>{' '}
 					<Link to="/customHook">Custom Hook</Link>{' '}
+					<Link to="/axiosDemo">Axios Demo</Link>{' '}
 				</nav>
 			</header>
 			<main style={{ padding: '1rem' }}>

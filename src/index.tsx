@@ -13,6 +13,7 @@ import UseReducerDemo from './memoisation/useReducer/usereducer.demo';
 import { App } from './app';
 import UseNoImperativeHandlerDemo from './memoisation/useImperativeHandler/noimperativehandler.demo';
 import CustomHookDemo from './memoisation/customHook/custom.hook.demo';
+import AxiosDemo from './memoisation/axiosDemo/axios.demo';
 
 const router = createBrowserRouter([
 	{
@@ -58,6 +59,10 @@ const router = createBrowserRouter([
 			{
 				path: '/customHook',
 				Component: CustomHookDemo,
+			},
+			{
+				path: '/axiosDemo',
+				Component: AxiosDemo,
 			},
 		],
 	},
