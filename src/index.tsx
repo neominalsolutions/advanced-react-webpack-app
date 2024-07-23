@@ -57,7 +57,7 @@ const router = createBrowserRouter([
 				Component: UseReducerDemo,
 			},
 			{
-				path: '/customHook',
+				path: '/CustomHook',
 				Component: CustomHookDemo,
 			},
 			{
