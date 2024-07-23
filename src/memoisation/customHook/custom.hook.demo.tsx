@@ -7,6 +7,7 @@ import {
 import { getProducts } from '../../services/product.services';
 import { UseStorage } from './useStorage.hook';
 import { UseAccessToken } from './useaccesstoken.hook';
+import { UseFetch } from './usefetch.hook';
 
 // hooklar function compopnentlerde function component bodysine yazılan özel functionlar.
 // amaç function yüklenirken bir eylemi yerine getirmek,
@@ -16,6 +17,7 @@ import { UseAccessToken } from './useaccesstoken.hook';
 // state değişiminde tekrar tetiklenecek şekilde yazabilirim.
 
 function CustomHookDemo() {
+	console.log('...rendering');
 	const [key, setKey] = useState<string>('token');
 
 	// token yerine başka bir key gelirse bu durumda bu hook nasıl tekrardan güncellenip değeri üretecek bide buna bakacağız.
@@ -24,6 +26,10 @@ function CustomHookDemo() {
 	const { value } = UseStorage(key);
 
 	const { subject, loginTime, name } = UseAccessToken();
+
+	
+
+	
 
 	return (
 		<>
