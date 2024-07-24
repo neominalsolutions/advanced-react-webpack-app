@@ -23,11 +23,12 @@ import CartSummary from './contexts/components/cart.summary.demo';
 const router = createBrowserRouter([
 	{
 		path: '',
-		element: (
-			<CartProvider>
-				<App />
-			</CartProvider>
-		), // Ana Layout
+		Component: App,
+		// element: (
+		// 	<CartProvider>
+		// 		<App />
+		// 	</CartProvider>
+		// ), // Ana Layout
 		children: [
 			{
 				path: '/usestate',
@@ -115,6 +116,8 @@ const root = ReactDom.createRoot(
 
 root.render(
 	<>
-		<RouterProvider router={router} />
+		<CartProvider>
+			<RouterProvider router={router} />
+		</CartProvider>
 	</>
 );
