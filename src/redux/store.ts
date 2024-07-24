@@ -1,11 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { cartReducer } from './features/cart.slice';
+import { todoReducer } from './features/todo.slice';
 
 // 2. part slice olarak tanımlanan değerleri dosyaları store'a tanıtıyoruz.
 
 export const store = configureStore({
 	reducer: {
 		cartState: cartReducer,
+		todoState: todoReducer,
 	},
 });
 

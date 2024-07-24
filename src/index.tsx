@@ -23,6 +23,7 @@ import ShopReduxDemo from './redux/components/shop.redux.demo';
 import CartSummaryReduxDemo from './redux/components/cart.summary.redux.demo';
 import { Provider } from 'react-redux';
 import { store } from './redux/store';
+import TodosPage from './redux/components/todos.page';
 
 const router = createBrowserRouter([
 	{
@@ -101,6 +102,10 @@ const router = createBrowserRouter([
 			{
 				path: '/cartSummaryRedux',
 				Component: CartSummaryReduxDemo,
+			},
+			{
+				path: '/todos',
+				Component: TodosPage,
 			},
 			// {
 			// 	path: '/shops',

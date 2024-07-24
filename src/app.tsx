@@ -1,7 +1,24 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link, Outlet } from 'react-router-dom';
+import { todoFetch, todoFetchMock } from './redux/features/todo.slice';
+import { useDispatch } from 'react-redux';
+import { AppDispatch } from './redux/store';
 
 export function App() {
+	// burada state load edersem uygulama genelinde bir daha refresh yapmayana kadar client state korunacaktır.
+
+	const dispatch = useDispatch<AppDispatch>();
+
+	useEffect(() => {
+		// çok fazla değişmeyen async verileri component içine girdiğimiz yükleme yerine
+		// app componentte hazır hale getiririz.
+		dispatch(todoFetch());
+	}, []);
+
+	const onManuelLoadTodos = () => {
+		dispatch(todoFetchMock());
+	};
+
 	return (
 		<>
 			<header>
@@ -24,7 +41,11 @@ export function App() {
 					<Link to="/cartSummary">Sepetim -ContextAPI</Link>{' '}
 					<Link to="/shopRedux">Ürünler- Redux</Link>{' '}
 					<Link to="/cartSummaryRedux">Sepetim -Redux</Link>{' '}
+					<Link to="/todos">Todos From Redux</Link>{' '}
 				</nav>
+				<p>
+					<button onClick={onManuelLoadTodos}>onManuelLoadTodos</button>
+				</p>
 			</header>
 			<main style={{ padding: '1rem' }}>
 				{/* yukarıdaki route isteklerine göre ilgili componentlerde burada Outlet işaretlemesi olduğu bölgeye girer */}
