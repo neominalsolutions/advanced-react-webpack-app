@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from '../store';
+import { removeFromCart, updateQuantity } from '../features/cart.slice';
 
 function CartSummaryReduxDemo() {
 	const dispatch = useDispatch<AppDispatch>();
@@ -9,11 +10,17 @@ function CartSummaryReduxDemo() {
 	const cartState = useSelector((state: RootState) => state.cartState);
 
 	const onRemoveItem = (productId: number) => {
-		useDispatch();
+		const ok = confirm('Spetten çıkarmak istediğinize emini misiniz');
+
+		if (ok) {
+			dispatch(removeFromCart({ productId: productId }));
+		}
 	};
 
 	const onQuantityChange = (productId: number, quantity: number) => {
-		useDispatch();
+		// dispatch();
+
+		dispatch(updateQuantity({ productId, quantity }));
 	};
 
 	return (

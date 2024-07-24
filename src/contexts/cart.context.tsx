@@ -19,6 +19,7 @@ export interface CartItem {
 export interface Cart {
 	items: CartItem[];
 	totalCost: number;
+	statusCode?: number;
 }
 
 export interface CartContextActionType {
