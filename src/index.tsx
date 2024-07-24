@@ -25,6 +25,7 @@ import { Provider } from 'react-redux';
 import { store } from './redux/store';
 import TodosPage from './redux/components/todos.page';
 import SwrDemo from './swr/swr.demo';
+import ReactFormHookDemo from './react-forms/react-form-hook.demo';
 
 const router = createBrowserRouter([
 	{
@@ -111,6 +112,10 @@ const router = createBrowserRouter([
 			{
 				path: '/swr',
 				Component: SwrDemo,
+			},
+			{
+				path: '/forms-hook',
+				Component: ReactFormHookDemo,
 			},
 
 			// {

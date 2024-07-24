@@ -43,6 +43,7 @@ export function App() {
 					<Link to="/cartSummaryRedux">Sepetim -Redux</Link>{' '}
 					<Link to="/todos">Todos From Redux</Link>{' '}
 					<Link to="/swr">Products From SWR</Link>{' '}
+					<Link to="/forms-hook">React Forms Hook</Link>{' '}
 				</nav>
 				<p>
 					<button onClick={onManuelLoadTodos}>onManuelLoadTodos</button>
