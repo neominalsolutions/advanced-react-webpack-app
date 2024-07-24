@@ -42,6 +42,7 @@ export function App() {
 					<Link to="/shopRedux">Ürünler- Redux</Link>{' '}
 					<Link to="/cartSummaryRedux">Sepetim -Redux</Link>{' '}
 					<Link to="/todos">Todos From Redux</Link>{' '}
+					<Link to="/swr">Products From SWR</Link>{' '}
 				</nav>
 				<p>
 					<button onClick={onManuelLoadTodos}>onManuelLoadTodos</button>

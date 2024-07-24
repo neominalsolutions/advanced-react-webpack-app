@@ -24,6 +24,7 @@ import CartSummaryReduxDemo from './redux/components/cart.summary.redux.demo';
 import { Provider } from 'react-redux';
 import { store } from './redux/store';
 import TodosPage from './redux/components/todos.page';
+import SwrDemo from './swr/swr.demo';
 
 const router = createBrowserRouter([
 	{
@@ -107,6 +108,11 @@ const router = createBrowserRouter([
 				path: '/todos',
 				Component: TodosPage,
 			},
+			{
+				path: '/swr',
+				Component: SwrDemo,
+			},
+
 			// {
 			// 	path: '/shops',
 			// 	element: (

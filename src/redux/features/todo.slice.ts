@@ -9,12 +9,11 @@
 
 // todoFetch async function component içinden dispatch edilerek çağırılır. async state başlar. extraReducers yazılan kod blokları kendi kendine otomatik olarak dolar.
 
-
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import axios, { AxiosError } from 'axios';
 import { httpClientModule } from '../../network/httpclient';
 
-interface Todo {
+export interface Todo {
 	id: number;
 	title: string;
 	completed: boolean;
