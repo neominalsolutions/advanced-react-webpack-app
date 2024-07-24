@@ -72,6 +72,19 @@ export function CartProvider({ children }: any) {
 
 	const removeFromCart = (productId: number) => {
 		console.log('sepetten sil');
+
+		const filteredItems = cart.items.filter((x) => x.productId != productId);
+		cart.items = filteredItems;
+
+		let totalCost: number = 0;
+
+		for (const item of cart.items) {
+			totalCost += item.listPrice * item.quantity;
+		}
+
+		cart.totalCost = totalCost;
+
+		setCart({ ...cart });
 	};
 
 	const updateQuantity = (productId: number, quantity: number) => {

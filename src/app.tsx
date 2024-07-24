@@ -22,6 +22,8 @@ export function App() {
 					<Link to="/debouncing">Debouncing Demo</Link>{' '}
 					<Link to="/shops">Ürünler- ContextAPI</Link>{' '}
 					<Link to="/cartSummary">Sepetim -ContextAPI</Link>{' '}
+					<Link to="/shopRedux">Ürünler- Redux</Link>{' '}
+					<Link to="/cartSummaryRedux">Sepetim -Redux</Link>{' '}
 				</nav>
 			</header>
 			<main style={{ padding: '1rem' }}>

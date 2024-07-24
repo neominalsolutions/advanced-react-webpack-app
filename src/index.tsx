@@ -19,6 +19,10 @@ import DebouncingDemo from './memoisation/debouncing/debouncing.demo';
 import { CartProvider } from './contexts/cart.context';
 import ShopDemo from './contexts/components/shop.demo';
 import CartSummary from './contexts/components/cart.summary.demo';
+import ShopReduxDemo from './redux/components/shop.redux.demo';
+import CartSummaryReduxDemo from './redux/components/cart.summary.redux.demo';
+import { Provider } from 'react-redux';
+import { store } from './redux/store';
 
 const router = createBrowserRouter([
 	{
@@ -90,6 +94,14 @@ const router = createBrowserRouter([
 				path: '/cartSummary',
 				Component: CartSummary,
 			},
+			{
+				path: '/shopRedux',
+				Component: ShopReduxDemo,
+			},
+			{
+				path: '/cartSummaryRedux',
+				Component: CartSummaryReduxDemo,
+			},
 			// {
 			// 	path: '/shops',
 			// 	element: (
@@ -116,8 +128,10 @@ const root = ReactDom.createRoot(
 
 root.render(
 	<>
-		<CartProvider>
-			<RouterProvider router={router} />
-		</CartProvider>
+		<Provider store={store}>
+			<CartProvider>
+				<RouterProvider router={router} />
+			</CartProvider>
+		</Provider>
 	</>
 );
