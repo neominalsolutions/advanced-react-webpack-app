@@ -3,6 +3,7 @@ import { Link, Outlet } from 'react-router-dom';
 import { todoFetch, todoFetchMock } from './redux/features/todo.slice';
 import { useDispatch } from 'react-redux';
 import { AppDispatch } from './redux/store';
+import './styles.scss';
 
 export function App() {
 	// burada state load edersem uygulama genelinde bir daha refresh yapmayana kadar client state korunacaktır.
@@ -22,7 +23,10 @@ export function App() {
 	return (
 		<>
 			<header>
-				<h1>React Web Pack App</h1>
+				<p className="text-3xl text-blue-600/100 font-bold underline ">
+					React Web Pack App
+				</p>
+
 				<nav>
 					<Link to="/usestate">Use State Demo</Link>{' '}
 					<Link to="/useeffect">Use Effect Demo</Link>{' '}
