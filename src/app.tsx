@@ -20,6 +20,8 @@ export function App() {
 					<Link to="/customHookLoadData">Custom Hook Load Data</Link>{' '}
 					<Link to="/axiosDemo">Axios Demo</Link>{' '}
 					<Link to="/debouncing">Debouncing Demo</Link>{' '}
+					<Link to="/shops">Ürünler- ContextAPI</Link>{' '}
+					<Link to="/cartSummary">Sepetim -ContextAPI</Link>{' '}
 				</nav>
 			</header>
 			<main style={{ padding: '1rem' }}>

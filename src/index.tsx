@@ -16,11 +16,18 @@ import CustomHookDemo from './memoisation/customHook/custom.hook.demo';
 import AxiosDemo from './memoisation/axiosDemo/axios.demo';
 import CustomHookLoadDataDemo from './memoisation/customHook/custom.hook.load.data.demo';
 import DebouncingDemo from './memoisation/debouncing/debouncing.demo';
+import { CartProvider } from './contexts/cart.context';
+import ShopDemo from './contexts/components/shop.demo';
+import CartSummary from './contexts/components/cart.summary.demo';
 
 const router = createBrowserRouter([
 	{
 		path: '',
-		Component: App, // Ana Layout
+		element: (
+			<CartProvider>
+				<App />
+			</CartProvider>
+		), // Ana Layout
 		children: [
 			{
 				path: '/usestate',
@@ -74,6 +81,30 @@ const router = createBrowserRouter([
 				path: '/debouncing',
 				Component: DebouncingDemo,
 			},
+			{
+				path: '/shops',
+				Component: ShopDemo,
+			},
+			{
+				path: '/cartSummary',
+				Component: CartSummary,
+			},
+			// {
+			// 	path: '/shops',
+			// 	element: (
+			// 		<CartProvider>
+			// 			<ShopDemo />
+			// 		</CartProvider>
+			// 	),
+			// },
+			// {
+			// 	path: '/cartSummary',
+			// 	element: (
+			// 		<CartProvider>
+			// 			<CartSummary />
+			// 		</CartProvider>
+			// 	),
+			// },
 		],
 	},
 ]);
